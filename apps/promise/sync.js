@@ -1,12 +1,11 @@
 let accessToken = window.localStorage.getItem('accessToken')
 const codeParam = (new URL(location)).searchParams.get('code')
+
 if (codeParam) {
-  console.log(1)
   // handle redirect
   window.localStorage.setItem('accessToken', codeParam)
-  location.reload()
+  window.history.pushState({}, document.title, window.location.pathname)
 } else if (accessToken === null) {
-  console.log(2)
   // to be auth
   const query = [
     'client_id=4755cf31f5cbc4ad47cf',
@@ -16,7 +15,6 @@ if (codeParam) {
   document.getElementById('auth').setAttribute('href', url)
   document.getElementById('auth').classList.remove('hidden')
 } else {
-  console.log(3)
   fetch('https://api.github.com/user')
     .then(response => {
       console.log('response', response)
