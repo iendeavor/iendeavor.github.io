@@ -6,7 +6,6 @@ if (accessToken === null) {
   const query = [
     'client_id=4755cf31f5cbc4ad47cf',
     'scope=gist',
-    'redirect_uri=https://us-central1-promise-280303.cloudfunctions.net/auth',
   ].join('&')
   const url = `https://github.com/login/oauth/authorize?${query}`
   document.getElementById('auth').setAttribute('href', url)
