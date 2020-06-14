@@ -15,7 +15,7 @@ if (codeParam) {
   document.getElementById('auth').setAttribute('href', url)
   document.getElementById('auth').classList.remove('hidden')
 } else {
-  fetch('https://api.github.com/user')
+  fetch(`https://us-central1-promise-280303.cloudfunctions.net/auth?code=${accessToken}`)
     .then(response => {
       console.log('response', response)
     })
