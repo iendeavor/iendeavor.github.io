@@ -1,9 +1,9 @@
 let accessToken = window.localStorage.getItem('accessToken')
-
-if (location.searchParams.get('code')) {
+const codeParam = (new URL(location)).searchParams.get('code')
+if (codeParam) {
   console.log(1)
   // handle redirect
-  window.localStorage.setItem('accessToken', location.url.searchParams.get('code'))
+  window.localStorage.setItem('accessToken', codeParam)
   location.reload()
 } else if (accessToken === null) {
   console.log(2)
