@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
 
-<body>
-  <a href="https://github.com/login/oauth/authorize?client_id=4755cf31f5cbc4ad47cf&scope=gist">Auth</a>
+    <script src="http://unpkg.com/vue@next/dist/vue.global.prod.js"></script>
+    <script src="http://unpkg.com/vuex@next/dist/vuex.global.prod.js"></script>
 
-  <script type="text/javascript">
-    console.log(window.location.search)
-    console.log(window.location.searchParams)
-  </script>
-</body>
-
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./assets/app.css">
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a id="auth" class="hidden">Auth</div>
+    <div id="app"></div>
+    <script src="./index.js"></script>
+    <script src="./sync.js"></script>
+  </body>
 </html>
