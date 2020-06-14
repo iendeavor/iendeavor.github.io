@@ -15,7 +15,10 @@ if (codeParam) {
   document.getElementById('auth').setAttribute('href', url)
   document.getElementById('auth').classList.remove('hidden')
 } else {
-  fetch(`https://us-central1-promise-280303.cloudfunctions.net/auth?code=${accessToken}`)
+  const config = {
+    mode: 'no-cors',
+  }
+  fetch(`https://us-central1-promise-280303.cloudfunctions.net/auth?code=${accessToken}`, config)
     .then(response => {
       console.log('response', response)
     })
